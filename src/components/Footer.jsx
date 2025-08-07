@@ -104,7 +104,7 @@ const Footer = () => {
         <ContactInfo>
           <div>📍 Haslett, MI, 48840</div>
           <div>📞 +1  517-331-9549</div>
-          <div>✉️ Ajayveerapaneni@anithasolutions.net</div>
+          <div>✉️ hr@anithasolutions.net</div>
         </ContactInfo>
         <FooterBottom>
           <div>© 2025 Anitha Solutions LLC. All Rights Reserved.</div>
