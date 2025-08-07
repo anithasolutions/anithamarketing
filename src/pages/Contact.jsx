@@ -247,12 +247,12 @@ const Contact = () => {
     {
       icon: contact2,
       title: "Submit Resume",
-      description: "Please mail your resumes to Ajayveerapaneni@anithasolutions.net and Hr@anithasolutions.net with the subject line having the role name"
+      description: "Please mail your resumes to Hr@anithasolutions.net with the subject line having the role name"
     },
     {
       icon: contact3,
       title: "Send an Email",
-      description: "Please mail your queries to Ajayveerapaneni@anithasolutions.net and Hr@anithasolutions.net with the subject line having the query"
+      description: "Please mail your queries to Hr@anithasolutions.net with the subject line having the query"
     }
   ];
 
