@@ -262,10 +262,15 @@ const [message, setMessage] = useState('');
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  const subject = encodeURIComponent(`Contact from ${fullName}`);
-  const body = encodeURIComponent(`${message}\n\nContact: ${contactInfo}`);
-  window.location.href = `mailto:Hr@anithasolutions.net?subject=${subject}&body=${body}`;
+  const subject = encodeURIComponent(`Contact from ${fullName || 'Website User'}`);
+  const crlf = '\r\n';
+  const body = encodeURIComponent(
+    `${message}${crlf}${crlf}Contact: ${contactInfo}`
+  );
+  window.location.href =
+    `mailto:hr@anithasolutions.net?subject=${subject}&body=${body}`;
 };
+
 
 
   return (
@@ -285,30 +290,33 @@ const handleSubmit = (e) => {
           ))}
         </ContactOptionsContainer>
       </ContactOptionsSection>
-      <ContactFormSection>
-        <ContactFormTitle>Contact Us For More Questions & Concerns:</ContactFormTitle>
-         <ContactForm onSubmit={handleSubmit}>
-  <FormInput
-    type="text"
-    placeholder="Full Name"
-    value={fullName}
-    onChange={(e) => setFullName(e.target.value)}
-  />
-  <FormInput
-    type="text"
-    placeholder="Email / Phone Number"
-    value={contactInfo}
-    onChange={(e) => setContactInfo(e.target.value)}
-  />
-  <FormTextarea
-    placeholder="Message"
-    rows={4}
-    value={message}
-    onChange={(e) => setMessage(e.target.value)}
-  />
-  <ContactButton type="submit">Contact Us</ContactButton>
-</ContactForm>
-      </ContactFormSection>
+     <ContactFormSection>
+  <ContactFormTitle>Contact Us For More Questions & Concerns:</ContactFormTitle>
+  <ContactForm onSubmit={handleSubmit}>
+    <FormInput
+      type="text"
+      placeholder="Full Name"
+      value={fullName}
+      onChange={(e) => setFullName(e.target.value)}
+      required
+    />
+    <FormInput
+      type="text"
+      placeholder="Email / Phone Number"
+      value={contactInfo}
+      onChange={(e) => setContactInfo(e.target.value)}
+      required
+    />
+    <FormTextarea
+      placeholder="Message"
+      rows={4}
+      value={message}
+      onChange={(e) => setMessage(e.target.value)}
+      required
+    />
+    <ContactButton type="submit">Contact Us</ContactButton>
+  </ContactForm>
+</ContactFormSection>
     </ContactContainer>
   );
 };
